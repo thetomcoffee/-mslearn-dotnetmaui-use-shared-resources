@@ -9,13 +9,14 @@
             <Color x:Key="bgColor">#C0C0C0</Color>
             <Color x:Key="fgColor">#0000AD</Color>
             <Color x:Key="textColor">#000000</Color>
+            <Color x:Key="lightBgColor">#FFFFFF</Color>
             <x:Double x:Key="fontSize">22</x:Double>
         </ResourceDictionary>
     </ContentPage.Resources>
     
     
     <Grid x:Name="LayoutRoot"
-          BackgroundColor="{StaticResource bgColor}"
+          BackgroundColor="{DynamicResource bgColor}"
           Padding="10"
           ColumnDefinitions="*, 3*"
           RowDefinitions="Auto, Auto, Auto, Auto, *">
@@ -24,21 +25,21 @@
         <!-- Left column = static labels -->
         <Label x:Name="billLabel"
                Text="Bill"
-               TextColor="{StaticResource fgColor}"
+               TextColor="{DynamicResource fgColor}"
                FontSize="{StaticResource fontSize}"
                FontAttributes="Bold"
                Grid.Row="0"
                Grid.Column="0" />
         <Label x:Name="tipLabel"
                Text="15% Tip"
-               TextColor="{StaticResource fgColor}"
+               TextColor="{DynamicResource fgColor}"
                FontSize="{StaticResource fontSize}"
                FontAttributes="Bold"
                Grid.Row="1"
                Grid.Column="0" />
         <Label x:Name="totalLabel"
                Text="Total"
-               TextColor="{StaticResource fgColor}"
+               TextColor="{DynamicResource fgColor}"
                FontSize="{StaticResource fontSize}"
                FontAttributes="Bold"
                Grid.Row="2"
@@ -53,13 +54,13 @@
                Grid.Column="1" />
         <Label x:Name="tipOutput"
                Text="0.00"
-               TextColor="{StaticResource fgColor}"
+               TextColor="{DynamicResource fgColor}"
                FontSize="{StaticResource fontSize}"
                Grid.Row="1"
                Grid.Column="1" />
         <Label x:Name="totalOutput"
                Text="0.00"
-               TextColor="{StaticResource fgColor}"
+               TextColor="{DynamicResource fgColor}"
                FontSize="{StaticResource fontSize}"
                Grid.Row="2"
                Grid.Column="1" />
@@ -67,7 +68,7 @@
         <!-- Navigate to advanced-view page -->
         <Button Text="Use Custom Calculator"
                 Clicked="GotoCustom"
-                TextColor="{StaticResource textColor}"
+                TextColor="{DynamicResource textColor}"
                 Grid.Row="3"
                 Grid.Column="0"
                 Grid.ColumnSpan="2" />
@@ -80,11 +81,13 @@
                                Grid.ColumnSpan="2">
             <Button Clicked="OnLight"
                     Text="Light"
-                    TextColor="{StaticResource textColor}"
+                    TextColor="{DynamicResource textColor}"
+                    BackgroundColor="{DynamicResource lightBgColor}"
                     Grid.Column="0" />
             <Button Clicked="OnDark"
                     Text="Dark"
-                    TextColor="{StaticResource textColor}"
+                    TextColor="{DynamicResource textColor}"
+                    BackgroundColor="{DynamicResource lightBgColor}"
                     Grid.Column="1" />
         </HorizontalStackLayout>
 

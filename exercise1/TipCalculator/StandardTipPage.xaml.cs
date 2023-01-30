@@ -1,3 +1,5 @@
+using Color = Microsoft.Maui.Graphics.Color;
+
 namespace TipCalculator;
 
 public partial class StandardTipPage : ContentPage
@@ -27,24 +29,18 @@ public partial class StandardTipPage : ContentPage
 
     void OnLight(object sender, EventArgs e)
     {
-        LayoutRoot.BackgroundColor = colorSilver;
-
-        tipLabel.TextColor = colorNavy;
-        billLabel.TextColor = colorNavy;
-        totalLabel.TextColor = colorNavy;
-        tipOutput.TextColor = colorNavy;
-        totalOutput.TextColor = colorNavy;
+        Resources["fgColor"] = colorNavy;
+        Resources["bgColor"] = colorSilver;
+        Resources["lightBgColor"] = Color.FromRgb(255, 255, 255);
+        Resources["textColor"] = Color.FromRgb(0, 0, 0);
     }
 
     void OnDark(object sender, EventArgs e)
     {
-        LayoutRoot.BackgroundColor = colorNavy;
-
-        tipLabel.TextColor = colorSilver;
-        billLabel.TextColor = colorSilver;
-        totalLabel.TextColor = colorSilver;
-        tipOutput.TextColor = colorSilver;
-        totalOutput.TextColor = colorSilver;
+        Resources["fgColor"] = colorSilver;
+        Resources["bgColor"] = colorNavy;
+        Resources["lightBgColor"] = Color.FromRgb(0, 0, 0);
+        Resources["textColor"] = Color.FromRgb(255, 255, 255);
     }
 
     async void GotoCustom(object sender, EventArgs e)
