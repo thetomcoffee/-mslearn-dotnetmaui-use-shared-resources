@@ -8,15 +8,17 @@
         <ResourceDictionary>
             <Color x:Key="bgColor">#C0C0C0</Color>
             <Color x:Key="fgColor">#0000AD</Color>
-            <x:Double x:Key="fontSize">14</x:Double>
-            <Style x:Key="infoLabelStyle"
+            <x:Double x:Key="fontSize">20</x:Double>
+            <Style x:Key="baseLabelStyle"
                    TargetType="Label">
-
                 <Setter Property="FontSize"
                         Value="{StaticResource fontSize}" />
+            </Style>
+            <Style x:Key="infoLabelStyle"
+                   BasedOn="{StaticResource baseLabelStyle}" 
+                   TargetType="Label">
                 <Setter Property="FontAttributes"
                         Value="Bold" />
-
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
@@ -60,13 +62,13 @@
         <Label x:Name="tipOutput"
                Text="0.00"
                TextColor="Navy"
-               Style="{StaticResource infoLabelStyle}"
+               Style="{StaticResource baseLabelStyle}"
                Grid.Row="1"
                Grid.Column="1" />
         <Label x:Name="totalOutput"
                Text="0.00"
                TextColor="Navy"
-               Style="{StaticResource infoLabelStyle}"
+               Style="{StaticResource baseLabelStyle}"
                Grid.Row="2"
                Grid.Column="1" />
 
